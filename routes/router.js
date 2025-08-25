@@ -4,6 +4,6 @@ const controller = require("../controllers/controller");
 const router = Router();
 
 // Home Page
-// router.get("/", controller.);
+router.get("/", controller.getInventory);
 
 module.exports = router;
