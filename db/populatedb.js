@@ -1,14 +1,19 @@
 // populatedb.js
-// Example food
+// Example food items
 const food = [
   {
     name: "Banana",
-    Category: "Fruit",
-    Price: 2.0,
+    category: "Fruit",
+    price: 2.0,
   },
   {
     name: "Apple",
-    Category: "Fruit",
-    Price: 1.5,
+    category: "Fruit",
+    price: 1.5,
+  },
+  {
+    name: "Carrots",
+    category: "Vegetable",
+    price: 4.75,
   },
 ];

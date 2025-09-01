@@ -2,13 +2,14 @@ const pool = require("./pool");
 
 async function getAllInventory() {
   const { rows } = await pool.query(
-    "SELECT * FROM my_messages ORDER BY added DESC"
+    "SELECT * FROM inventory ORDER BY category DESC"
   );
   return rows;
 }
 
 async function createItem(name, category, price) {
-  const query = "INSERT INTO inventory (name, text, added) VALUES ($1, $2, $3)";
+  const query =
+    "INSERT INTO inventory (name, text, category) VALUES ($1, $2, $3)";
   await pool.query(query, [name, category, price]);
 }
 
