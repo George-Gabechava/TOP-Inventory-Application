@@ -7,6 +7,31 @@
   <body>
     <h1><%= title %></h1>
 
+    <div id="inventory-list">
+      <% food.forEach(item => { %>
+      <div
+        class="item-card"
+        data-name="<%= item.name %>"
+        data-category="<%= item.category %>"
+        data-price="<%= item.price %>"
+      >
+        <h3><%= item.name %></h3>
+        <p><b>Category:</b> <%= item.category %></p>
+        <p><b>Price:</b> $<%= Number(item.price).toFixed(2) %></p>
+        <div class="actions">
+          <a href="/edit/<%= item.id %>">Edit</a> |
+          <form
+            action="/delete/<%= item.id %>"
+            method="POST"
+            style="display: inline"
+          >
+            <button type="submit">Delete</button>
+          </form>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+
     <%- include('footer'); %>
   </body>
 </html>

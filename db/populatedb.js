@@ -1,4 +1,7 @@
 // populatedb.js
+require("dotenv").config();
+const pool = require("./pool");
+
 // Example food items
 const food = [
   {
@@ -17,3 +20,21 @@ const food = [
     price: 4.75,
   },
 ];
+
+async function populate() {
+  try {
+    for (const item of food) {
+      await pool.query(
+        "INSERT INTO inventory (name, category, price) VALUES ($1, $2, $3) ON CONFLICT (name) DO NOTHING",
+        [item.name, item.category, item.price]
+      );
+    }
+    console.log("Database populated!");
+  } catch (err) {
+    console.error("Error populating:", err);
+  } finally {
+    pool.end();
+  }
+}
+
+populate();

@@ -1,0 +1,11 @@
+/* mobile first */
+.item-card {
+  border: 1px solid;
+  padding: 2px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+/* CSS for screens bigger than a tablet */
+@media screen and (min-width: 1000px) {
+}
