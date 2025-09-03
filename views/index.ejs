@@ -5,8 +5,85 @@
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
+    <!-- Header -->
     <h1><%= title %></h1>
+    <!-- Add item -->
+    <button id="addButton">Add Item</button>
 
+    <!-- Add item popup -->
+    <div class="formPopup" id="addItem">
+      <form class="formContainer" id="addForm">
+        <!-- Close button -->
+        <button class="closeButton" id="closeAdd" aria-label="Close Button">
+          &times;
+        </button>
+        <!-- Item Details -->
+        <div class="formRow" id="form-row-1">
+          <label for="itemName">Item Name</label>
+          <input type="text" id="itemName" name="itemName" required />
+        </div>
+        <div class="formRow">
+          <label for="categoryName">Item Category</label>
+          <input type="text" id="categoryName" name="categoryName" required />
+        </div>
+        <div class="formRow">
+          <label for="itemPrice">Item Price</label>
+          <input
+            type="number"
+            id="itemPrice"
+            name="itemPrice"
+            min="0"
+            required
+          />
+        </div>
+
+        <!-- Submit -->
+        <div class="formRow">
+          <input type="submit" value="Add Item" id="submitItem" />
+        </div>
+      </form>
+    </div>
+
+    <!-- Edit Item Popup -->
+    <div class="formPopup" id="editItem">
+      <form class="formContainer" method="POST" id="editForm">
+        <!-- Close button-->
+        <button
+          class="closeButton"
+          type="button"
+          id="closeEdit"
+          aria-label="Close Edit Popup"
+        >
+          &times;
+        </button>
+        <!-- Item Details -->
+        <input type="hidden" id="editId" name="id" />
+        <div class="formRow">
+          <label for="editName">Item Name</label>
+          <input type="text" id="editName" name="itemName" required />
+        </div>
+        <div class="formRow">
+          <label for="editCategory">Item Category</label>
+          <input type="text" id="editCategory" name="categoryName" required />
+        </div>
+        <div class="formRow">
+          <label for="editPrice">Item Price</label>
+          <input
+            type="number"
+            id="editPrice"
+            name="itemPrice"
+            min="0"
+            required
+          />
+        </div>
+        <div class="formRow">
+          <!-- Submit -->
+          <input type="submit" value="Update Item" />
+        </div>
+      </form>
+    </div>
+
+    <!-- List each item from the database -->
     <div id="inventory-list">
       <% food.forEach(item => { %>
       <div
@@ -18,20 +95,33 @@
         <h3><%= item.name %></h3>
         <p><b>Category:</b> <%= item.category %></p>
         <p><b>Price:</b> $<%= Number(item.price).toFixed(2) %></p>
+
         <div class="actions">
-          <a href="/edit/<%= item.id %>">Edit</a> |
+          <!-- Edit Button -->
+          <button
+            type="button"
+            class="editButton"
+            data-id="<%= item.id %>"
+            data-name="<%= item.name %>"
+            data-category="<%= item.category %>"
+            data-price="<%= item.price %>"
+          >
+            Edit
+          </button>
+          <!-- Delete Button -->
           <form
             action="/delete/<%= item.id %>"
             method="POST"
             style="display: inline"
           >
-            <button type="submit">Delete</button>
+            <button type="submit" class="deleteButton">Delete</button>
           </form>
         </div>
       </div>
       <% }) %>
     </div>
 
+    <!-- Footer -->
     <%- include('footer'); %>
   </body>
 </html>

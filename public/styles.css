@@ -6,6 +6,20 @@
   border-radius: 5px;
 }
 
+/* All popups hidden by default */
+.formPopup {
+  display: none;
+  position: fixed;
+  top: 10%;
+  width: 50%;
+  margin: 5% auto; /* Only centers horizontally not vertically! */
+  left: 0;
+  right: 0;
+
+  background-color: lightgoldenrodyellow;
+  border: solid 3px;
+}
+
 /* CSS for screens bigger than a tablet */
 @media screen and (min-width: 1000px) {
 }
