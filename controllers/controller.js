@@ -33,9 +33,16 @@ async function deleteItem(req, res) {
   res.redirect("/");
 }
 
+// Delete a category
+async function deleteCategory(req, res) {
+  await db.deleteCategory(req.params.category);
+  res.redirect("/");
+}
+
 module.exports = {
   getInventory,
   addItem,
   updateItem,
   deleteItem,
+  deleteCategory,
 };

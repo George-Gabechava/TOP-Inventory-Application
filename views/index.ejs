@@ -137,13 +137,24 @@
           >
             Edit
           </button>
-          <!-- Delete Button -->
+          <!-- Delete Item Button -->
           <form
             action="/delete/<%= item.id %>"
             method="POST"
             style="display: inline"
           >
-            <button type="submit" class="deleteButton">Delete</button>
+            <button type="submit" class="deleteButton">Delete Item</button>
+          </form>
+
+          <!-- Delete Category Button -->
+          <form
+            action="/deleteCategory/<%= item.category %>"
+            method="POST"
+            style="display: inline"
+          >
+            <button type="submit" class="deleteButton">
+              Delete Item's Category
+            </button>
           </form>
         </div>
       </div>

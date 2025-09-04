@@ -28,9 +28,16 @@ async function deleteItem(id) {
   await pool.query(query, [id]);
 }
 
+// Delete Items of a Category
+async function deleteCategory(category) {
+  const query = "DELETE FROM inventory WHERE category = $1";
+  await pool.query(query, [category]);
+}
+
 module.exports = {
   getAllInventory,
   addItem,
   updateItem,
   deleteItem,
+  deleteCategory,
 };

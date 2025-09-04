@@ -15,4 +15,7 @@ router.post("/edit/:id", controller.updateItem);
 // Delete item
 router.post("/delete/:id", controller.deleteItem);
 
+// Delete category
+router.post("/deleteCategory/:category", controller.deleteCategory);
+
 module.exports = router;
