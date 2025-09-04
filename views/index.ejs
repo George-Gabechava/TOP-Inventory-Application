@@ -14,7 +14,12 @@
     <div class="formPopup" id="addItem">
       <form class="formContainer" id="addForm">
         <!-- Close button -->
-        <button class="closeButton" id="closeAdd" aria-label="Close Button">
+        <button
+          class="closeButton"
+          type="button"
+          id="closeAdd"
+          aria-label="Close Form"
+        >
           &times;
         </button>
         <!-- Item Details -->
@@ -32,6 +37,7 @@
             type="number"
             id="itemPrice"
             name="itemPrice"
+            step="0.01"
             min="0"
             required
           />
@@ -52,7 +58,7 @@
           class="closeButton"
           type="button"
           id="closeEdit"
-          aria-label="Close Edit Popup"
+          aria-label="Close Form"
         >
           &times;
         </button>
@@ -72,6 +78,7 @@
             type="number"
             id="editPrice"
             name="itemPrice"
+            step="0.01"
             min="0"
             required
           />
@@ -99,7 +106,6 @@
         <div class="actions">
           <!-- Edit Button -->
           <button
-            type="button"
             class="editButton"
             data-id="<%= item.id %>"
             data-name="<%= item.name %>"
@@ -114,7 +120,7 @@
             method="POST"
             style="display: inline"
           >
-            <button type="submit" class="deleteButton">Delete</button>
+            <button class="deleteButton">Delete</button>
           </form>
         </div>
       </div>
@@ -123,5 +129,8 @@
 
     <!-- Footer -->
     <%- include('footer'); %>
+
+    <!-- Script -->
+    <script src="/script.js"></script>
   </body>
 </html>

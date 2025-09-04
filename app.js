@@ -15,7 +15,7 @@ const PORT = process.env._PORT || 5000;
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views")); // Set the views directory
 
-// Serve static files like CSS
+// Serve files
 app.use(express.static(path.join(__dirname, "public")));
 
 // Route for the homepage

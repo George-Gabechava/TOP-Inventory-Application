@@ -14,14 +14,9 @@ async function addItem(req, res) {
   res.redirect("/");
 }
 
-// Form to edit an item
-async function getEdit(req, res) {
-  const item = await db.getItemById(req.params.id);
-  res.render("editItem", { title: "Edit Item", item });
-}
-
 // Update an item
 async function updateItem(req, res) {
+  console.log("Updating item", req.params.id, req.body);
   const { itemName, categoryName, itemPrice } = req.body;
   await db.updateItem(
     req.params.id,
@@ -41,7 +36,6 @@ async function deleteItem(req, res) {
 module.exports = {
   getInventory,
   addItem,
-  getEdit,
   updateItem,
   deleteItem,
 };

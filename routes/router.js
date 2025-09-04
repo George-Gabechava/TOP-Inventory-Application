@@ -9,9 +9,6 @@ router.get("/", controller.getInventory);
 // Add item
 router.post("/add", controller.addItem);
 
-// Edit item form
-router.get("/edit/:id", controller.getEdit);
-
 // Update item
 router.post("/edit/:id", controller.updateItem);
 

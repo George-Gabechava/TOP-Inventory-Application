@@ -5,9 +5,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const addPopup = document.getElementById("addItem");
   const editPopup = document.getElementById("editItem");
 
-  const openAddButton = document.getElementById("openAddButton");
-  const closeAddButton = document.getElementById("closeAdd");
-  const closeEditButton = document.getElementById("closeEdit");
+  const addButton = document.getElementById("addButton");
+  const closeAdd = document.getElementById("closeAdd");
+  const closeEdit = document.getElementById("closeEdit");
 
   // Add Item popup
   addButton.addEventListener("click", () => {
@@ -21,6 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("editName").value = button.dataset.name;
       document.getElementById("editCategory").value = button.dataset.category;
       document.getElementById("editPrice").value = button.dataset.price;
+
+      editForm.action = `/edit/${button.dataset.id}`;
       editPopup.style.display = "block";
     });
   });
