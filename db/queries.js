@@ -9,17 +9,17 @@ async function getAllInventory() {
 }
 
 // Add a new item
-async function addItem(name, category, price) {
+async function addItem(name, category, price, quantity) {
   const query =
-    "INSERT INTO inventory (name, category, price) VALUES ($1, $2, $3)";
-  await pool.query(query, [name, category, price]);
+    "INSERT INTO inventory (name, category, price, quantity) VALUES ($1, $2, $3, $4)";
+  await pool.query(query, [name, category, price, quantity]);
 }
 
 // Update item
-async function updateItem(id, name, category, price) {
+async function updateItem(id, name, category, price, quantity) {
   const query =
-    "UPDATE inventory SET name = $1, category = $2, price = $3 WHERE id = $4";
-  await pool.query(query, [name, category, price, id]);
+    "UPDATE inventory SET name = $1, category = $2, price = $3, quantity = $4 WHERE id = $5";
+  await pool.query(query, [name, category, price, quantity, id]);
 }
 
 // Delete item

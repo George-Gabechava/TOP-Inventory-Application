@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("editName").value = button.dataset.name;
       document.getElementById("editCategory").value = button.dataset.category;
       document.getElementById("editPrice").value = button.dataset.price;
+      document.getElementById("editQuantity").value = button.dataset.quantity;
 
       editForm.action = `/edit/${button.dataset.id}`;
       editPopup.style.display = "block";

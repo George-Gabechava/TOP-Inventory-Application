@@ -42,6 +42,16 @@
             required
           />
         </div>
+        <div class="formRow">
+          <label for="itemQuantity">Item Quantity</label>
+          <input
+            type="number"
+            id="itemQuantity"
+            name="itemQuantity"
+            min="0"
+            required
+          />
+        </div>
 
         <!-- Submit Button-->
         <div class="formRow">
@@ -84,6 +94,16 @@
           />
         </div>
         <div class="formRow">
+          <label for="editQuantity">Item Quantity</label>
+          <input
+            type="number"
+            id="editQuantity"
+            name="editQuantity"
+            min="0"
+            required
+          />
+        </div>
+        <div class="formRow">
           <!-- Submit Button -->
           <input type="submit" value="Update Item" />
         </div>
@@ -98,10 +118,12 @@
         data-name="<%= item.name %>"
         data-category="<%= item.category %>"
         data-price="<%= item.price %>"
+        data-quantity="<%= item.quantity %>"
       >
         <h3><%= item.name %></h3>
         <p><b>Category:</b> <%= item.category %></p>
         <p><b>Price:</b> $<%= Number(item.price).toFixed(2) %></p>
+        <p><b>Quantity:</b> <%= item.quantity %></p>
 
         <div class="actions">
           <!-- Edit Button -->
@@ -111,6 +133,7 @@
             data-name="<%= item.name %>"
             data-category="<%= item.category %>"
             data-price="<%= item.price %>"
+            data-quantity="<%= item.quantity %>"
           >
             Edit
           </button>
@@ -120,7 +143,7 @@
             method="POST"
             style="display: inline"
           >
-            <button class="deleteButton">Delete</button>
+            <button type="submit" class="deleteButton">Delete</button>
           </form>
         </div>
       </div>

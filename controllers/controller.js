@@ -9,20 +9,20 @@ async function getInventory(req, res) {
 
 // Create a new item
 async function addItem(req, res) {
-  const { itemName, categoryName, itemPrice } = req.body;
-  await db.addItem(itemName, categoryName, parseFloat(itemPrice));
+  const { itemName, categoryName, itemPrice, itemQuantity } = req.body;
+  await db.addItem(itemName, categoryName, parseFloat(itemPrice), itemQuantity);
   res.redirect("/");
 }
 
 // Update an item
 async function updateItem(req, res) {
-  console.log("Updating item", req.params.id, req.body);
-  const { itemName, categoryName, itemPrice } = req.body;
+  const { itemName, categoryName, itemPrice, editQuantity } = req.body;
   await db.updateItem(
     req.params.id,
     itemName,
     categoryName,
-    parseFloat(itemPrice)
+    parseFloat(itemPrice),
+    editQuantity
   );
   res.redirect("/");
 }
