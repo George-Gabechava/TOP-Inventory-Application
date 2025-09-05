@@ -45,9 +45,9 @@ categoryButtons.forEach((button) => {
       const cardCategory = card.dataset.category;
 
       if (selectedCategory === "All") {
-        card.style.display = "block";
+        card.style.display = "flex";
       } else if (cardCategory === selectedCategory) {
-        card.style.display = "block";
+        card.style.display = "flex";
       } else {
         card.style.display = "none";
       }
