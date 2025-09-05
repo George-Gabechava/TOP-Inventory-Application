@@ -22,15 +22,6 @@
     <!-- Add item popup -->
     <div class="formPopup" id="addItem">
       <form class="formContainer" id="addForm" method="POST" action="/add">
-        <!-- Close button -->
-        <button
-          class="closeButton"
-          type="button"
-          id="closeAdd"
-          aria-label="Close Form"
-        >
-          &times;
-        </button>
         <!-- Item Details -->
         <div class="formRow" id="form-row-1">
           <label for="itemName">Item Name</label>
@@ -65,6 +56,15 @@
         <!-- Submit Button-->
         <div class="formRow">
           <input type="submit" value="Add Item" id="submitItem" />
+          <!-- Close button -->
+          <button
+            class="closeButton"
+            type="button"
+            id="closeAdd"
+            aria-label="Close Form"
+          >
+            Cancel;
+          </button>
         </div>
       </form>
     </div>
@@ -72,15 +72,6 @@
     <!-- Edit Item Popup -->
     <div class="formPopup" id="editItem">
       <form class="formContainer" method="POST" id="editForm">
-        <!-- Close button-->
-        <button
-          class="closeButton"
-          type="button"
-          id="closeEdit"
-          aria-label="Close Form"
-        >
-          &times;
-        </button>
         <!-- Item Details -->
         <input type="hidden" id="editId" name="id" />
         <div class="formRow">
@@ -115,6 +106,15 @@
         <div class="formRow">
           <!-- Submit Button -->
           <input type="submit" value="Update Item" />
+          <!-- Close button-->
+          <button
+            class="closeButton"
+            type="button"
+            id="closeEdit"
+            aria-label="Close Form"
+          >
+            Cancel;
+          </button>
         </div>
       </form>
     </div>
@@ -132,7 +132,7 @@
         <h3><%= item.name %></h3>
         <p><b>Category:</b> <%= item.category %></p>
         <p><b>Price:</b> $<%= Number(item.price).toFixed(2) %></p>
-        <p><b>Quantity:</b> <%= item.quantity %></p>
+        <p><b>In-Stock:</b> <%= item.quantity %></p>
 
         <div class="actions">
           <!-- Edit Button -->

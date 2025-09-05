@@ -1,23 +1,84 @@
-/* mobile first */
+/* mobile first styling*/
+
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  background-color: lightseagreen;
+}
+
 .item-card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
   border: 1px solid;
-  padding: 2px;
+  padding: 5px;
   margin-bottom: 5px;
   border-radius: 5px;
+
+  width: 90vw;
+  background-color: lightgreen;
 }
 
 /* All popups hidden by default */
 .formPopup {
   display: none;
+  align-items: center;
+  flex-direction: column;
   position: fixed;
-  top: 10%;
+  top: 20%;
   width: 50%;
-  margin: 5% auto; /* Only centers horizontally not vertically! */
+  margin: 5% auto;
   left: 0;
   right: 0;
 
   background-color: lightgoldenrodyellow;
   border: solid 3px;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+p,
+label,
+input,
+button,
+input[type="submit"] {
+  font-size: 1rem;
+}
+
+p {
+  margin-block-start: 5px;
+  margin-block-end: 5px;
+}
+
+/* Pop up form CSS */
+button,
+input[type="submit"] {
+  margin-bottom: 10px;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.formRow {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+form {
+  margin-block-end: 0px;
+  margin-block-start: 5px;
 }
 
 /* CSS for screens bigger than a tablet */

@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Add Item popup
   addButton.addEventListener("click", () => {
-    addPopup.style.display = "block";
+    addPopup.style.display = "flex";
   });
 
   // Edit Item popup
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("editQuantity").value = button.dataset.quantity;
 
       editForm.action = `/edit/${button.dataset.id}`;
-      editPopup.style.display = "block";
+      editPopup.style.display = "flex";
     });
   });
 
