@@ -32,3 +32,25 @@ document.addEventListener("DOMContentLoaded", () => {
   closeAdd.addEventListener("click", () => (addPopup.style.display = "none"));
   closeEdit.addEventListener("click", () => (editPopup.style.display = "none"));
 });
+
+// Category Buttons
+const categoryButtons = document.querySelectorAll("#categories button");
+const itemCards = document.querySelectorAll(".item-card");
+
+categoryButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const selectedCategory = button.textContent;
+
+    itemCards.forEach((card) => {
+      const cardCategory = card.dataset.category;
+
+      if (selectedCategory === "All") {
+        card.style.display = "block";
+      } else if (cardCategory === selectedCategory) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  });
+});

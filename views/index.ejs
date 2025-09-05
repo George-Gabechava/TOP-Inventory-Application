@@ -7,9 +7,18 @@
   <body>
     <!-- Header -->
     <h1><%= title %></h1>
+
     <!-- Add item -->
     <button id="addButton">Add Item</button>
 
+    <!-- Categories List -->
+    <h2>Categories</h2>
+    <div id="categories">
+      <button id="allCategotiesButton">All</button>
+      <% categories.forEach(category => { %>
+      <button><%= category %></button>
+      <% }) %>
+    </div>
     <!-- Add item popup -->
     <div class="formPopup" id="addItem">
       <form class="formContainer" id="addForm" method="POST" action="/add">
@@ -152,9 +161,7 @@
             method="POST"
             style="display: inline"
           >
-            <button type="submit" class="deleteButton">
-              Delete Item's Category
-            </button>
+            <button type="submit" class="deleteButton">Delete Category</button>
           </form>
         </div>
       </div>

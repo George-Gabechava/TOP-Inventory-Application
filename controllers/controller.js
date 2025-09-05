@@ -4,7 +4,14 @@ const db = require("../db/queries");
 // Get all items
 async function getInventory(req, res) {
   const food = await db.getAllInventory();
-  res.render("index", { title: "Food Inventory", food });
+  const categories = [];
+  for (let i in food) {
+    let currentCategory = food[i].category;
+    if (!categories.includes(currentCategory)) {
+      categories.push(currentCategory);
+    }
+  }
+  res.render("index", { title: "Food Inventory", food, categories });
 }
 
 // Create a new item
