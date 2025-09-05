@@ -1,11 +1,9 @@
-/* mobile first styling*/
-
 body {
   display: flex;
   align-items: center;
   flex-direction: column;
 
-  background-color: lightseagreen;
+  background-color: #20b2aa;
 }
 
 .item-card {
@@ -81,6 +79,6 @@ form {
   margin-block-start: 5px;
 }
 
-/* CSS for screens bigger than a tablet */
-@media screen and (min-width: 1000px) {
+a:link {
+  color: #6b0037;
 }
